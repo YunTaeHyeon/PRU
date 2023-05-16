@@ -10,5 +10,6 @@ public class UserRepository implements JpaRepository<User,Long> {
 */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    User findByEmail(String email);
     // 추가적인 메서드 정의
 }
