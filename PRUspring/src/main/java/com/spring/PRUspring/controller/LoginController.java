@@ -37,6 +37,11 @@ public class LoginController {
             return "login";
         }
     }
+    @GetMapping({"/login", "/"})
+    public String loginPage() {
+        // 로그인 페이지로 이동하는 로직을 추가합니다.
+        return "login";
+    }
 
     // 홈페이지로 이동하는 핸들러
     @GetMapping("/home")

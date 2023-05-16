@@ -14,5 +14,10 @@
 
   <input type="submit" value="로그인">
 </form>
+
+<!-- 실패 알림 메시지 표시 -->
+<div th:if="${errorMessage}" style="color: red;">
+  <p th:text="${errorMessage}"></p>
+</div>
 </body>
 </html>
