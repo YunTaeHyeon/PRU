@@ -87,6 +87,7 @@ public class RegistrationController {
     @PostMapping("/register") //프로필 이미지가 null이어도 됨
     public String processRegistration(@RequestParam("username") String username,
                                       @RequestParam("email") String email,
+                                      @RequestParam("password") String password,
                                       @RequestPart(value = "profileImage", required = false) MultipartFile profileImage) {
         // username과 email 값을 받아 회원가입 로직 처리
         // 프로필 이미지도 받아서 처리하는 로직 추가
@@ -101,6 +102,7 @@ public class RegistrationController {
                 User newUser = User.builder()
                         .username(username)
                         .email(email)
+                        .password(password)
                         .profileImagePath(filePath)
                         .build();
 
@@ -114,6 +116,7 @@ public class RegistrationController {
             User newUser = User.builder()
                     .username(username)
                     .email(email)
+                    .password(password)
                     .build();
 
             userRepository.save(newUser);
